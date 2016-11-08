@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Swift Web Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Rest Services" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1428574149000</longProp>
+        <longProp name="ThreadGroup.end_time">1428574149000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getAllRecords" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/shipwrecks</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONArray allRecords = new JSONArray(response);
+        if(allRecords.length() != 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Response was not empty for getAllRecords&quot;;
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Record" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${addShipRecords}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">addShips.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">name,description,condition,yearDiscovered,depth,latitude,longitude</stringProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;name&quot;:&quot;${name}&quot;,&#xd;
+	&quot;description&quot;:&quot;${description}&quot;,&#xd;
+	&quot;condition&quot;:&quot;${condition}&quot;,&#xd;
+	&quot;yearDiscovered&quot;:${yearDiscovered},&#xd;
+	&quot;depth&quot;:${depth},&#xd;
+	&quot;latitude&quot;:${latitude},&#xd;
+	&quot;longitude&quot;:${longitude}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+	   JSONObject addedRecord = new JSONObject(response);
+        if(addedRecord != null &amp;&amp; addedRecord.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Add ship record failed, the response was empty&quot;;
+        }
+        else
+        {
+        	 if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Add ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	if(!addedRecord.get(&quot;name&quot;).equals(&quot;${name}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;description&quot;).equals(&quot;${description}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, description was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;condition&quot;).equals(&quot;${condition}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, condition was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;depth&quot;) != ${depth})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;latitude&quot;) != ${latitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;longitude&quot;) != ${longitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, longitude was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;yearDiscovered&quot;) != ${yearDiscovered})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, yearDiscovered was not the same as added&quot;;
+        	 	}
+
+			
+        	 	vars.put(&quot;shipId&quot;, String.valueOf(addedRecord.get(&quot;id&quot;)));
+        	 }
+        	 
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get Added Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/${shipId}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONObject addedRecord = new JSONObject(response);
+        if(addedRecord != null &amp;&amp; addedRecord.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;get Added Records : Response was empty after adding a ship record&quot;;
+        }
+        else
+        {
+        	  if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Add ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	if(!addedRecord.get(&quot;name&quot;).equals(&quot;${name}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;description&quot;).equals(&quot;${description}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, description was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;condition&quot;).equals(&quot;${condition}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, condition was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;depth&quot;) != ${depth})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;latitude&quot;) != ${latitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;longitude&quot;) != ${longitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, longitude was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;yearDiscovered&quot;) != ${yearDiscovered})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, yearDiscovered was not the same as added&quot;;
+        	 	}
+        	  }
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getAllRecords_AfterAdd" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/shipwrecks</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONArray allRecords = new JSONArray(response);
+        if(allRecords.length() != ${addShipRecords})
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Data returned after ships added did not match with the count&quot;;
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Record" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get All Records" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONArray addedRecordArr = new JSONArray(response);
+        if(addedRecordArr != null &amp;&amp; addedRecordArr.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;get Added Records : Response was empty before updating ship&quot;;
+        }
+        else
+        {
+        	 JSONObject addedRecord = addedRecordArr.getJSONObject(1);
+        	 
+        	 if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Add ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	String shipName = addedRecord.get(&quot;name&quot;) + &quot;_Updated&quot;;
+        	 	
+        	 	vars.put(&quot;shipName&quot;, shipName);
+        	 	vars.put(&quot;shipId_Update&quot;, String.valueOf(addedRecord.get(&quot;id&quot;)));
+        	 	vars.put(&quot;description&quot;, addedRecord.get(&quot;description&quot;));
+        	 	vars.put(&quot;condition&quot;, addedRecord.get(&quot;condition&quot;));
+        	 	vars.put(&quot;depth&quot;, String.valueOf(addedRecord.get(&quot;depth&quot;)));
+        	 	vars.put(&quot;latitude&quot;, String.valueOf(addedRecord.get(&quot;latitude&quot;)));
+        	 	vars.put(&quot;longitude&quot;, String.valueOf(addedRecord.get(&quot;longitude&quot;)));
+        	 	vars.put(&quot;yearDiscovered&quot;, String.valueOf(addedRecord.get(&quot;yearDiscovered&quot;)));
+        	 	
+		 }
+        }
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;id&quot;:${shipId_Update},&#xd;
+	&quot;name&quot;:&quot;${shipName}&quot;,&#xd;
+	&quot;description&quot;:&quot;${description}&quot;,&#xd;
+	&quot;condition&quot;:&quot;${condition}&quot;,&#xd;
+	&quot;yearDiscovered&quot;:${yearDiscovered},&#xd;
+	&quot;depth&quot;:${depth},&#xd;
+	&quot;latitude&quot;:40,&#xd;
+	&quot;longitude&quot;:180&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/${shipId_Update}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+	   JSONObject addedRecord = new JSONObject(response);
+        if(addedRecord != null &amp;&amp; addedRecord.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Add ship record failed, the response was empty&quot;;
+        }
+        else
+        {
+        	 if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Add ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	if(!addedRecord.get(&quot;name&quot;).equals(&quot;${name}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;description&quot;).equals(&quot;${description}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, description was not the same as added&quot;;
+        	 	}
+        	 	if(!addedRecord.get(&quot;condition&quot;).equals(&quot;${condition}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, condition was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;depth&quot;) != ${depth})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;latitude&quot;) != ${latitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, name was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;longitude&quot;) != ${longitude})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, longitude was not the same as added&quot;;
+        	 	}
+        	 	if(addedRecord.get(&quot;yearDiscovered&quot;) != ${yearDiscovered})
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Add ship record failed, yearDiscovered was not the same as added&quot;;
+        	 	}
+
+			
+        	 	vars.put(&quot;shipId&quot;, String.valueOf(addedRecord.get(&quot;id&quot;)));
+        	 }
+        	 
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get Updated Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/${shipId_Update}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONObject addedRecord = new JSONObject(response);
+        if(addedRecord != null &amp;&amp; addedRecord.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;get Added Records : Response was empty after adding a ship record&quot;;
+        }
+        else
+        {
+        	  if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Update ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	if(!addedRecord.get(&quot;name&quot;).equals(&quot;${shipName}&quot;))
+        	 	{
+        	 		Failure=true ;
+               	FailureMessage = &quot;Update ship record failed, name was not the same as updated&quot;;
+        	 	}
+        	  }
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete Record" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get All Records" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONArray addedRecordArr = new JSONArray(response);
+        if(addedRecordArr != null &amp;&amp; addedRecordArr.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;get Added Records : Response was empty before updating ship&quot;;
+        }
+        else
+        {
+        	 JSONObject addedRecord = addedRecordArr.getJSONObject(0);
+        	 
+        	 if(!addedRecord.has(&quot;id&quot;) || !addedRecord.has(&quot;name&quot;) || !addedRecord.has(&quot;description&quot;) || !addedRecord.has(&quot;condition&quot;) || !addedRecord.has(&quot;depth&quot;) || !addedRecord.has(&quot;latitude&quot;) || !addedRecord.has(&quot;longitude&quot;) || !addedRecord.has(&quot;yearDiscovered&quot;))
+        	 {
+        	 	Failure=true ;
+               FailureMessage = &quot;Delete ship record failed, the response data does not have all the parameters&quot;;
+        	 }
+        	 else
+        	 {
+        	 	vars.put(&quot;shipName&quot;, addedRecord.get(&quot;name&quot;));
+        	 	vars.put(&quot;shipId_ToDelete&quot;, String.valueOf(addedRecord.get(&quot;id&quot;)));
+        	 	vars.put(&quot;description&quot;, addedRecord.get(&quot;description&quot;));
+        	 	vars.put(&quot;condition&quot;, addedRecord.get(&quot;condition&quot;));
+        	 	vars.put(&quot;depth&quot;, String.valueOf(addedRecord.get(&quot;depth&quot;)));
+        	 	vars.put(&quot;latitude&quot;, String.valueOf(addedRecord.get(&quot;latitude&quot;)));
+        	 	vars.put(&quot;longitude&quot;, String.valueOf(addedRecord.get(&quot;longitude&quot;)));
+        	 	vars.put(&quot;yearDiscovered&quot;, String.valueOf(addedRecord.get(&quot;yearDiscovered&quot;)));
+        	 }
+        }
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;id&quot;:${shipId_ToDelete},&#xd;
+	&quot;name&quot;:&quot;${shipName}&quot;,&#xd;
+	&quot;description&quot;:&quot;${description}&quot;,&#xd;
+	&quot;condition&quot;:&quot;${condition}&quot;,&#xd;
+	&quot;yearDiscovered&quot;:${yearDiscovered},&#xd;
+	&quot;depth&quot;:${depth},&#xd;
+	&quot;latitude&quot;:40,&#xd;
+	&quot;longitude&quot;:180&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/${shipId_ToDelete}</stringProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+	   JSONObject addedRecord = new JSONObject(response);
+        if(addedRecord != null &amp;&amp; addedRecord.length() == 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Delete ship record failed, the response was empty&quot;;
+        }
+        else
+        {
+        	if(addedRecord.get(&quot;id&quot;) != ${shipId_ToDelete})
+        	{
+        		Failure=true ;
+               FailureMessage = &quot;Delete ship record failed, the response Id does not match with the sent one&quot;;
+        	}
+        }
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get Deleted Record" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/shipwrecks/${shipId_ToDelete}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://${server}:${port}/index.html</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">import org.json.JSONObject;
+import org.json.JSONArray;
+
+if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+    Failure=true ;
+    FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+} 
+else 
+{
+    try 
+    {
+        response = new String(((byte[])ResponseData));
+        response = response.replaceAll(&quot;\n&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\t&quot;,&quot;&quot;);
+        response = response.replaceAll(&quot;\r&quot;,&quot;&quot;);
+
+        JSONArray allRecords = new JSONArray(response);
+        if(allRecords.length() != 0)
+        {
+        	 Failure=true ;
+           FailureMessage = &quot;Response should be empty for the ship as it is deleted&quot;;
+        }
+
+    } 
+    catch (Exception e) 
+    {
+        Failure=true ;
+        FailureMessage = &quot;Error : &quot; + e.getMessage();
+    }
+}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ConnectTimeout" elementType="Argument">
+            <stringProp name="Argument.name">ConnectTimeout</stringProp>
+            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.desc">in ms</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ResponseTimeout" elementType="Argument">
+            <stringProp name="Argument.name">ResponseTimeout</stringProp>
+            <stringProp name="Argument.value">20000</stringProp>
+            <stringProp name="Argument.desc">in ms</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="server" elementType="Argument">
+            <stringProp name="Argument.name">server</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">9999</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="addShipRecords" elementType="Argument">
+            <stringProp name="Argument.name">addShipRecords</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
